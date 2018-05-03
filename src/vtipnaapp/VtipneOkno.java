@@ -55,4 +55,11 @@ class VtipneOkno {
     void zobraz() {
         this.okno.setVisible(true);
     }
+    
+    private class AnoListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(null, "Tak sa drz!");
+        }
+    }
 }
