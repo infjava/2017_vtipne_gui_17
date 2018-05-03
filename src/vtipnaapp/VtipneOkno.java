@@ -9,6 +9,8 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
@@ -72,6 +74,14 @@ class VtipneOkno {
                 
                 VtipneOkno.this.okno.revalidate();
             }
+        });
+        
+        nie.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                ano.requestFocus();
+            }
+            
         });
         
         this.prveAno = true;
