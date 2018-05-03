@@ -42,6 +42,8 @@ class VtipneOkno {
         final JButton ano = new JButton("Ano");
         final JButton nie = new JButton("Nie");
         
+        ano.addActionListener(new AnoListener());
+        
         tlacice.add(ano);
         tlacice.add(nie);
         
