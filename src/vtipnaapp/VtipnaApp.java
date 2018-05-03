@@ -15,7 +15,8 @@ public class VtipnaApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        VtipneOkno okno = new VtipneOkno();
+        okno.zobraz();
     }
     
 }
