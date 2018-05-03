@@ -31,6 +31,23 @@ class VtipneOkno {
     public VtipneOkno() {
         this.okno = new JFrame("Otazka");
         this.okno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        this.okno.setLayout(new BorderLayout());
+        
+        this.okno.add(new JLabel("Spravis Informatiku?"), BorderLayout.CENTER);
+        
+        JPanel tlacice = new JPanel();
+        tlacice.setLayout(new GridLayout(1, 2));
+        
+        final JButton ano = new JButton("Ano");
+        final JButton nie = new JButton("Nie");
+        
+        tlacice.add(ano);
+        tlacice.add(nie);
+        
+        this.okno.add(tlacice, BorderLayout.SOUTH);
+        
+        this.okno.pack();
     }
 
     void zobraz() {
