@@ -24,6 +24,7 @@ import javax.swing.JPanel;
 class VtipneOkno {
 
     private final JFrame okno;
+    private boolean prveAno;
     
     // Otazka           _OX
     // ====================
@@ -58,12 +59,22 @@ class VtipneOkno {
             @Override
             public void mouseEntered(MouseEvent e) {
                 tlacice.removeAll();
-                tlacice.add(nie);
-                tlacice.add(ano);
+                
+                if (VtipneOkno.this.prveAno) {
+                    tlacice.add(nie);
+                    tlacice.add(ano);
+                } else {
+                    tlacice.add(ano);
+                    tlacice.add(nie);
+                }
+                
+                VtipneOkno.this.prveAno = !VtipneOkno.this.prveAno;
+                
                 VtipneOkno.this.okno.revalidate();
             }
         });
         
+        this.prveAno = true;
         tlacice.add(ano);
         tlacice.add(nie);
         
