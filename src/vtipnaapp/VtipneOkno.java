@@ -44,6 +44,12 @@ class VtipneOkno {
         
         ano.addActionListener((ActionEvent e) -> {
             JOptionPane.showMessageDialog(null, "Tak sa drz!");
+            System.exit(0);
+        });
+        
+        nie.addActionListener((ActionEvent e) -> {
+            JOptionPane.showMessageDialog(null, "To fakt?");
+            System.exit(0);
         });
         
         tlacice.add(ano);
