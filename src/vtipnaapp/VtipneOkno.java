@@ -42,11 +42,8 @@ class VtipneOkno {
         final JButton ano = new JButton("Ano");
         final JButton nie = new JButton("Nie");
         
-        ano.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Tak sa drz!");
-            }
+        ano.addActionListener((ActionEvent e) -> {
+            JOptionPane.showMessageDialog(null, "Tak sa drz!");
         });
         
         tlacice.add(ano);
