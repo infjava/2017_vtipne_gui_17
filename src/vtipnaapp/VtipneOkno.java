@@ -13,6 +13,8 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -35,7 +37,7 @@ class VtipneOkno {
 
     public VtipneOkno() {
         this.okno = new JFrame("Otazka");
-        this.okno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.okno.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         
         this.okno.setLayout(new BorderLayout());
         
@@ -89,6 +91,14 @@ class VtipneOkno {
         tlacice.add(nie);
         
         this.okno.add(tlacice, BorderLayout.SOUTH);
+        
+        this.okno.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                JOptionPane.showMessageDialog(null, "Skutocne chces vzdat taku lahku otazku?");
+            }
+            
+        });
         
         this.okno.pack();
     }
